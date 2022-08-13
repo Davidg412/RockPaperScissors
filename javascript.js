@@ -8,15 +8,7 @@ function getComputerChoice() {
     return randomChoice = gameArray[Math.floor(Math.random()*gameArray.length)];
 }
 
-console.log(getComputerChoice());
 
- //let randomChoice = getComputerChoice();
-
-//Gets players choice
-//function playerChoice() {
-  //let playerChoice = prompt('Rock, Paper, or Scissors?' );
-  //return playerChoice;
-//}
 
 //Function that makes the players choice case-insensitive
 function caseInsensitive(choice) {
@@ -26,6 +18,7 @@ function caseInsensitive(choice) {
 const playerSelection = caseInsensitive('rOcK');
 const computerSelection = getComputerChoice();
 console.log(playerSelection);
+console.log(computerSelection);
 
 
 //let playerChoice = playerChoice();
@@ -35,35 +28,43 @@ console.log(playerSelection);
 //Function that plays a single round of Rock Paper Scissors
 function playRound(playerSelection, computerSelection) {
     switch (true) {
-    //    case playerChoice === randomChoice:
-      //      console.log('Tie!');
-        //    break;
-//
-  //      case playerChoice === 'Rock' && randomChoice === 'Paper':
-    //        console.log('You lose! Beat by the paper');
-      //      break;
-//
-  //      case playerChoice === 'Rock' && randomChoice === 'Scissors':
-    //            console.log('You win! Your rock destroyed my scissors');
-      //          break;
-        //
-       // case playerChoice === 'Paper' && randomChoice === 'Scissors':
-         //           console.log('You lose! Scissors cuts paper!');
-           //         break;
-//
-  //      case playerChoice === 'Paper' && randomChoice === 'Rock':
-    //                    console.log('You win! Paper covers rock');
-      //                  break;
-//
-  //       case playerChoice === 'Scissors' && randomChoice === 'Rock':
-    //                        console.log('You lose! Rock smashes scissors');
-      //                      break;
-//
-  //      case playerChoice === 'Scissors' && randomChoice === 'Paper':
-    //                            console.log('You win! Cut that paper right in half!');
-      //                          break;
-//
-  //      default:
-    //                playerChoice;
+        case playerSelection === computerSelection:
+            console.log('Tie!');
+            break;
+
+        case playerSelection  === 'Rock' && computerSelection === 'Paper':
+            console.log('You lose! Beat by the paper');
+            break;
+
+        case playerSelection  === 'Rock' && computerSelection === 'Scissors':
+                console.log('You win! Your rock destroyed my scissors');
+                break;
+    
+        case playerSelection  === 'Paper' && computerSelection === 'Scissors':
+                    console.log('You lose! Scissors cuts paper!');
+                    break;
+
+        case playerSelection  === 'Paper' && computerSelection === 'Rock':
+                        console.log('You win! Paper covers rock');
+                        break;
+
+         case playerSelection === 'Scissors' && computerSelection === 'Rock':
+                            console.log('You lose! Rock smashes scissors');
+                            break;
+
+        case playerSelection  === 'Scissors' && computerSelection === 'Paper':
+                                console.log('You win! Cut that paper right in half!');
+                                break;
+
+        default:
+                    console.log('Thats not a valid choice!');
     }
 }
+
+console.log(playRound(playerSelection, computerSelection));
+ //let randomChoice = getComputerChoice();
+
+//Gets players choice
+//function playerChoice() {
+  //let playerChoice = prompt('Rock, Paper, or Scissors?' );
+  //return playerChoice;
