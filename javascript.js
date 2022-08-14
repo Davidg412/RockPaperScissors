@@ -29,27 +29,27 @@ console.log(computerSelection);
 function playRound(playerSelection, computerSelection) {
     switch (true) {
         case playerSelection === computerSelection:
-            console.log('Tie!');
+            return('Tie!');
             break;
 
         case playerSelection  === 'Rock' && computerSelection === 'Paper':
-            console.log('You lose! Beat by the paper');
+            return('You lose! Beat by the paper!');
             break;
 
         case playerSelection  === 'Rock' && computerSelection === 'Scissors':
-                console.log('You win! Your rock destroyed my scissors');
+                return('You win! Your rock destroyed my scissors!');
                 break;
     
         case playerSelection  === 'Paper' && computerSelection === 'Scissors':
-                    console.log('You lose! Scissors cuts paper!');
+                    return('You lose! Scissors cuts paper!');
                     break;
 
         case playerSelection  === 'Paper' && computerSelection === 'Rock':
-                        console.log('You win! Paper covers rock');
+                        return('You win! Paper covers rock!');
                         break;
 
          case playerSelection === 'Scissors' && computerSelection === 'Rock':
-                            console.log('You lose! Rock smashes scissors');
+                            return('You lose! Rock smashes scissors!');
                             break;
 
         case playerSelection  === 'Scissors' && computerSelection === 'Paper':
@@ -57,7 +57,7 @@ function playRound(playerSelection, computerSelection) {
                                 break;
 
         default:
-                    console.log('Thats not a valid choice!');
+                    return('Thats not a valid choice!');
     }
 }
 
