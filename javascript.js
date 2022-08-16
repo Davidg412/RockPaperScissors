@@ -1,6 +1,6 @@
 //Rock Paper Scissors program
 console.log('Welcome to Rock, Paper, Scissors!');
-console.log('Enough of this simple talk, lets do this!');
+console.log('Enough of this simple talk, lets do this! Best of 5 rounds!');
 
 //Function that generates a random choice of Rock, Paper, or Scissors
 function getComputerChoice() {
@@ -9,23 +9,12 @@ function getComputerChoice() {
 }
 
 
-
 //Function that makes the players choice case-insensitive
 function caseInsensitive(choice) {
   return choice.charAt(0).toUpperCase() + choice.slice(1).toLowerCase();
 }
 
-const playerSelection = caseInsensitive('rOcK');
-const computerSelection = getComputerChoice();
-console.log(playerSelection);
-console.log(computerSelection);
-
-
-//let playerChoice = playerChoice();
-
-
-
-//Function that plays a single round of Rock Paper Scissors
+//Function that contains switch statement that plays a single round of Rock Paper Scissors
 function playRound(playerSelection, computerSelection) {
     switch (true) {
         case playerSelection === computerSelection:
@@ -33,38 +22,64 @@ function playRound(playerSelection, computerSelection) {
             break;
 
         case playerSelection  === 'Rock' && computerSelection === 'Paper':
+            compScore++;
             return('You lose! Beat by the paper!');
             break;
 
         case playerSelection  === 'Rock' && computerSelection === 'Scissors':
-                return('You win! Your rock destroyed my scissors!');
-                break;
+            playerScore++;
+            return('You win! Your rock destroyed my scissors!');
+            break;
     
         case playerSelection  === 'Paper' && computerSelection === 'Scissors':
-                    return('You lose! Scissors cuts paper!');
-                    break;
+            compScore++;
+            return('You lose! Scissors cuts paper!');
+            break;
 
         case playerSelection  === 'Paper' && computerSelection === 'Rock':
-                        return('You win! Paper covers rock!');
-                        break;
+            playerScore++;
+            return('You win! Paper covers rock!');
+            break;
 
-         case playerSelection === 'Scissors' && computerSelection === 'Rock':
-                            return('You lose! Rock smashes scissors!');
-                            break;
+        case playerSelection === 'Scissors' && computerSelection === 'Rock':
+            compScore++;
+            return('You lose! Rock smashes scissors!');
+            break;
 
         case playerSelection  === 'Scissors' && computerSelection === 'Paper':
-                                console.log('You win! Cut that paper right in half!');
-                                break;
+            playerScore++;
+            return('You win! Cut that paper right in half!');
+            break;
 
         default:
                     return('Thats not a valid choice!');
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
- //let randomChoice = getComputerChoice();
 
-//Gets players choice
-//function playerChoice() {
-  //let playerChoice = prompt('Rock, Paper, or Scissors?' );
-  //return playerChoice;
+let playerScore = 0;
+let compScore = 0;
+
+//For loop that plays 5 rounds of Rock Paper Scissors and keeps score
+function game() {
+    for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice();
+        let playerSelection = caseInsensitive(prompt("Whats your choice?"));
+        console.log('Your choice: ', playerSelection);
+        console.log('Computer Choice: ', computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        console.log('Your Score: ', playerScore);
+        console.log('Computer Score:', compScore);
+            }
+    }
+
+game();
+
+//If condition that will do a comparison of the scores to notify the player if they won/lost/tied
+if (playerScore === compScore) {
+    console.log("This match ends in a tie!");
+ } else if(playerScore > compScore) {
+    console.log("You are victorious!");
+ } else {
+    console.log("You lost the match!");
+ }
