@@ -3,4 +3,6 @@ This is my first Javascript program from the Odin Project. The initial creation 
 
 When revisiting the Rock Paper Scissors program, the goal of adding the UI was to get practice with using DOM to manipulate javascript.
 
+Project link: https://davidg412.github.io/RockPaperScissors/
+
 ![image](https://user-images.githubusercontent.com/103713915/209202087-00c175d3-5f4a-45ec-a32d-33787a9711c3.png)
